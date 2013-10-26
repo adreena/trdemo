@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns:viz="http:///www.gexf.net/1.1draft/viz" version="1.1" xmlns="http://www.gexf.net/1.1draft">
+<meta lastmodifieddate="2010-05-29+01:27">
+<Creator>ofNodesAndEdges.com</Creator>
+<Title>Les Misérables, the characters coappearance weighted graph</Title>
+</meta>
+<graph defaultedgetype="directed" idtype="string" type="static">
+<attributes class="node" mode="static">
+<attribute id="authority" title="Authority" type="float"/>
+<attribute id="hub" title="Hub" type="float"/>
+</attributes>
+<nodes count="30">
+
+<node id="0.0" label="Paralysis">
+<attvalues>
+<attvalue for="authority" value="0.0051282053"/>
+<attvalue for="hub" value="0.0051282053"/>
+</attvalues>
+<viz:size value="15.857142"/>
+<viz:color b="5" g="8" r="183"/>
+<viz:position x="-160.2533" y="-24.29684" z="0.0"/>
+</node>
+
+<node id="1.0" label="Paralysis_flaccis">
+<attvalues>
+<attvalue for="authority" value="0.020512821"/>
+<attvalue for="hub" value="0.020512821"/>
+</attvalues>
+<viz:size value="23.57143"/>
+<viz:color b="50" g="80" r="220"/>
+<viz:position x="-267.16248" y="196.98003" z="0.0"/>
+</node>
+
+<node id="2.0" label="Musclature">
+<attvalues>
+<attvalue for="authority" value="0.027350428"/>
+<attvalue for="hub" value="0.027350428"/>
+</attvalues>
+<viz:size value="27.0"/>
+<viz:color b="71" g="112" r="237"/>
+<viz:position x="-190.88988" y="96.44671" z="0.0"/>
+</node>
+
+<node id="3.0" label="Flaccid_Paralysis">
+<attvalues>
+<attvalue for="authority" value="0.020512821"/>
+<attvalue for="hub" value="0.020512821"/>
+</attvalues>
+<viz:size value="23.57143"/>
+<viz:color b="50" g="80" r="220"/>
+<viz:position x="-222.5417" y="144.66484" z="0.0"/>
+</node>
+
+<node id="4.0" label="Signs">
+<attvalues>
+<attvalue for="authority" value="0.017094018"/>
+<attvalue for="hub" value="0.017094018"/>
+</attvalues>
+<viz:size value="21.857143"/>
+<viz:color b="40" g="64" r="212"/>
+<viz:position x="-325.61102" y="166.71417" z="0.0"/>
+</node>
+
+<node id="5.0" label="Creator">
+<attvalues>
+<attvalue for="authority" value="0.020512821"/>
+<attvalue for="hub" value="0.020512821"/>
+</attvalues>
+<viz:size value="23.57143"/>
+<viz:color b="50" g="80" r="220"/>
+<viz:position x="-276.3468" y="145.79153" z="0.0"/>
+</node>
+
+<node id="6.0" label="Neurological_Signs">
+<attvalues>
+<attvalue for="authority" value="0.023931624"/>
+<attvalue for="hub" value="0.023931624"/>
+</attvalues>
+<viz:size value="25.285713"/>
+<viz:color b="61" g="96" r="229"/>
+<viz:position x="-251.45561" y="97.83937" z="0.0"/>
+</node>
+
+
+<node id="7.0" label="Difficulties">
+<attvalues>
+<attvalue for="authority" value="0.022222223"/>
+<attvalue for="hub" value="0.022222223"/>
+</attvalues>
+<viz:size value="24.428572"/>
+<viz:color b="55" g="88" r="224"/>
+<viz:position x="-318.40936" y="114.202415" z="0.0"/>
+</node>
+
+
+<node id="8.0" label="Breathing_Difficulties">
+<attvalues>
+<attvalue for="authority" value="0.023931624"/>
+<attvalue for="hub" value="0.023931624"/>
+</attvalues>
+<viz:size value="25.285713"/>
+<viz:color b="61" g="96" r="229"/>
+<viz:position x="-278.9682" y="45.932438" z="0.0"/>
+</node>
+
+<node id="9.0" label="Buffaloes">
+<attvalues>
+<attvalue for="authority" value="0.022222223"/>
+<attvalue for="hub" value="0.022222223"/>
+</attvalues>
+<viz:size value="24.428572"/>
+<viz:color b="55" g="88" r="224"/>
+<viz:position x="-333.04984" y="62.438156" z="0.0"/>
+</node>
+
+
+<node id="10.0" label="168">
+<attvalues>
+<attvalue for="authority" value="0.01880342"/>
+<attvalue for="hub" value="0.01880342"/>
+</attvalues>
+<viz:size value="22.714287"/>
+<viz:color b="45" g="72" r="216"/>
+<viz:position x="-370.2446" y="101.73884" z="0.0"/>
+</node>
+
+
+<node id="11.0" label="Breather">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="15.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="-253.54378" y="237.9443" z="0.0"/>
+</node>
+
+
+<node id="12.0" label="Deaths">
+<attvalues>
+<attvalue for="authority" value="0.01880342"/>
+<attvalue for="hub" value="0.01880342"/>
+</attvalues>
+<viz:size value="22.714287"/>
+<viz:color b="45" g="72" r="216"/>
+<viz:position x="-16.550194" y="152.69055" z="0.0"/>
+</node>
+
+<node id="13.0" label="Alertness">
+<attvalues>
+<attvalue for="authority" value="0.01880342"/>
+<attvalue for="hub" value="0.01880342"/>
+</attvalues>
+<viz:size value="22.714287"/>
+<viz:color b="45" g="72" r="216"/>
+<viz:position x="35.653145" y="144.49445" z="0.0"/>
+</node>
+
+
+<node id="14.0" label="Normal_Alertness">
+<attvalues>
+<attvalue for="authority" value="0.01880342"/>
+<attvalue for="hub" value="0.01880342"/>
+</attvalues>
+<viz:size value="22.714287"/>
+<viz:color b="45" g="72" r="216"/>
+<viz:position x="58.97649" y="188.46011" z="0.0"/>
+</node>
+
+
+<node id="15.0" label="Water">
+<attvalues>
+<attvalue for="authority" value="0.017094018"/>
+<attvalue for="hub" value="0.017094018"/>
+</attvalues>
+<viz:size value="21.857143"/>
+<viz:color b="40" g="64" r="212"/>
+<viz:position x="-2.9325058" y="200.66508" z="0.0"/>
+</node>
+
+
+<node id="16.0" label="thing_led">
+<attvalues>
+<attvalue for="authority" value="0.006837607"/>
+<attvalue for="hub" value="0.006837607"/>
+</attvalues>
+<viz:size value="16.714285"/>
+<viz:color b="10" g="16" r="187"/>
+<viz:position x="-30.056648" y="3.5053203" z="0.0"/>
+</node>
+
+<node id="17.0" label="Thing_becoming_Contaminated">
+<attvalues>
+<attvalue for="authority" value="0.0051282053"/>
+<attvalue for="hub" value="0.0051282053"/>
+</attvalues>
+<viz:size value="15.857142"/>
+<viz:color b="5" g="8" r="183"/>
+<viz:position x="-244.859" y="-11.3161335" z="0.0"/>
+</node>
+
+<node id="18.0" label="Toxin_Water">
+<attvalues>
+<attvalue for="authority" value="0.0051282053"/>
+<attvalue for="hub" value="0.0051282053"/>
+</attvalues>
+<viz:size value="15.857142"/>
+<viz:color b="5" g="8" r="183"/>
+<viz:position x="-280.33203" y="-1.466383" z="0.0"/>
+</node>
+
+<node id="19.0" label="Outbreak">
+<attvalues>
+<attvalue for="authority" value="0.013675214"/>
+<attvalue for="hub" value="0.013675214"/>
+</attvalues>
+<viz:size value="20.142857"/>
+<viz:color b="30" g="48" r="204"/>
+<viz:position x="-56.819256" y="182.0544" z="0.0"/>
+</node>
+<node id="20.0" label="Sporadic_Outbreak">
+<attvalues>
+<attvalue for="authority" value="0.013675214"/>
+<attvalue for="hub" value="0.013675214"/>
+</attvalues>
+<viz:size value="20.142857"/>
+<viz:color b="30" g="48" r="204"/>
+<viz:position x="-382.06223" y="47.045475" z="0.0"/>
+</node>
+
+<node id="21.0" label="States">
+<attvalues>
+<attvalue for="authority" value="0.034188036"/>
+<attvalue for="hub" value="0.034188036"/>
+</attvalues>
+<viz:size value="30.428574"/>
+<viz:color b="92" g="143" r="252"/>
+<viz:position x="-142.15263" y="36.388676" z="0.0"/>
+</node>
+<node id="22.0" label="Sao_Paolo">
+<attvalues>
+<attvalue for="authority" value="0.008547009"/>
+<attvalue for="hub" value="0.008547009"/>
+</attvalues>
+<viz:size value="17.571428"/>
+<viz:color b="15" g="24" r="191"/>
+<viz:position x="-95.75337" y="-102.71505" z="0.0"/>
+</node>
+<node id="23.0" label="Mato_Grosso_Sul">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="15.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="-132.14008" y="-66.85538" z="0.0"/>
+</node>
+<node id="24.0" label="Goias">
+<attvalues>
+<attvalue for="authority" value="0.0051282053"/>
+<attvalue for="hub" value="0.0051282053"/>
+</attvalues>
+<viz:size value="15.857142"/>
+<viz:color b="5" g="8" r="183"/>
+<viz:position x="-93.764046" y="22.565668" z="0.0"/>
+</node>
+<node id="25.0" label="Location">
+<attvalues>
+<attvalue for="authority" value="0.013675214"/>
+<attvalue for="hub" value="0.013675214"/>
+</attvalues>
+<viz:size value="20.142857"/>
+<viz:color b="30" g="48" r="204"/>
+<viz:position x="-93.255005" y="-60.657784" z="0.0"/>
+</node>
+<node id="26.0" label="Hydric Botulism">
+<attvalues>
+<attvalue for="authority" value="0.0051282053"/>
+<attvalue for="hub" value="0.0051282053"/>
+</attvalues>
+<viz:size value="15.857142"/>
+<viz:color b="5" g="8" r="183"/>
+<viz:position x="-57.473045" y="29.63873" z="0.0"/>
+</node>
+<node id="27.0" label="Cattle">
+<attvalues>
+<attvalue for="authority" value="0.013675214"/>
+<attvalue for="hub" value="0.013675214"/>
+</attvalues>
+<viz:size value="20.142857"/>
+<viz:color b="30" g="48" r="204"/>
+<viz:position x="-119.18742" y="-17.39732" z="0.0"/>
+</node>
+<node id="28.0" label="Leader">
+<attvalues>
+<attvalue for="authority" value="0.03931624"/>
+<attvalue for="hub" value="0.03931624"/>
+</attvalues>
+<viz:size value="33.0"/>
+<viz:color b="114" g="160" r="252"/>
+<viz:position x="-215.57619" y="34.40003" z="0.0"/>
+</node>
+<node id="29.0" label="Ingestion">
+<attvalues>
+<attvalue for="authority" value="0.0051282053"/>
+<attvalue for="hub" value="0.0051282053"/>
+</attvalues>
+<viz:size value="15.857142"/>
+<viz:color b="5" g="8" r="183"/>
+<viz:position x="-294.94247" y="-108.07895" z="0.0"/>
+</node>
+<node id="30.0" label="Forcer">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="15.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="-293.23438" y="-146.10257" z="0.0"/>
+</node>
+
+<node id="31.0" label="...">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="15.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="-253.54378" y="270.9443" z="0.0"/>
+</node>
+
+
+
+
+
+
+
+
+</nodes>
+<edges count="254">
+<edge id="0" source="0.0" target="1.0"/>
+<edge id="1" source="0.0" target="2.0" weight="8.0"/>
+<edge id="2" source="0.0" target="3.0" weight="10.0"/>
+<edge id="3" source="4.0" target="0.0" weight="6.0"/>
+<edge id="4" source="4.0" target="5.0"/>
+<edge id="5" source="4.0" target="6.0"/>
+<edge id="6" source="4.0" target="7.0"/>
+<edge id="7" source="7.0" target="8.0"/>
+<edge id="8" source="4.0" target="9.0" weight="2.0"/>
+<edge id="9" source="9.0" target="10.0"/>
+<edge id="13" source="9.0" target="11.0" weight="5.0"/>
+<edge id="12" source="9.0" target="12.0" weight="3.0"/>
+<edge id="11" source="7.0" target="13.0" weight="3.0"/>
+<edge id="10" source="9.0" target="13.0"/>
+<edge id="14" source="13.0" target="14.0"/>
+<edge id="15" source="15.0" target="16.0"/>
+<edge id="16" source="15.0" target="17.0"/>
+<edge id="17" source="15.0" target="18.0"/>
+<edge id="18" source="19.0" target="20.0" weight="4.0"/>
+<edge id="19" source="19.0" target="21.0" weight="4.0"/>
+<edge id="20" source="21.0" target="22.0" weight="4.0"/>
+<edge id="21" source="21.0" target="23.0" weight="4.0"/>
+<edge id="22" source="21.0" target="24.0" weight="4.0"/>
+<edge id="23" source="22.0" target="25.0" weight="4.0"/>
+<edge id="24" source="23.0" target="25.0" weight="3.0"/>
+<edge id="25" source="19.0" target="26.0" weight="3.0"/>
+<edge id="26" source="26.0" target="27.0" weight="3.0"/>
+<edge id="27" source="26.0" target="28.0" weight="4.0"/>
+<edge id="28" source="26.0" target="29.0" weight="3.0"/>
+<edge id="29" source="29.0" target="30.0" weight="3.0"/>
+<edge id="30" source="24.0" target="25.0" weight="3.0"/>
+<edge id="31" source="11.0" target="31.0" weight="3.0"/>
+
+</edges>
+</graph>
+</gexf>

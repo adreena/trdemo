@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns:viz="http:///www.gexf.net/1.1draft/viz" version="1.1" xmlns="http://www.gexf.net/1.1draft">
+<meta lastmodifieddate="2010-05-29+01:27">
+<Creator>ofNodesAndEdges.com</Creator>
+<Title>Les Misérables, the characters coappearance weighted graph</Title>
+</meta>
+<graph defaultedgetype="directed" idtype="string" type="static">
+<attributes class="node" mode="static">
+<attribute id="authority" title="Authority" type="float"/>
+<attribute id="hub" title="Hub" type="float"/>
+</attributes>
+
+
+<nodes count="9">
+<node id="0.0" label="He">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="15.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="10.669666" y="-16.23158" z="0.0"/>
+</node>
+
+<node id="1.0" label="Sayer">
+<attvalues>
+<attvalue for="authority" value="0.06324787"/>
+<attvalue for="hub" value="0.06324787"/>
+</attvalues>
+<viz:size value="25.0"/>
+<viz:color b="217" g="240" r="254"/>
+<viz:position x="-8.81755" y="-65.480377" z="0.0"/>
+</node>
+<node id="2.0" label="Statement">
+<attvalues>
+<attvalue for="authority" value="0.0051282053"/>
+<attvalue for="hub" value="0.0051282053"/>
+</attvalues>
+<viz:size value="25.857142"/>
+<viz:color b="5" g="8" r="183"/>
+<viz:position x="50.85369" y="20.77216" z="0.0"/>
+</node>
+<node id="3.0" label="Farmers">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="15.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="78.10812" y="-16.99423" z="0.0"/>
+</node>
+<node id="4.0" label="Salmonella">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="15.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="60.9098" y="-46.99423" z="0.0"/>
+</node>
+<node id="5.0" label="Herd">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="35.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="100.6509" y="30.41602" z="0.0"/>
+</node>
+
+<node id="6.0" label="Entity_giving_Advice">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="25.0"/>
+<viz:color b="217" g="240" r="254"/>
+<viz:position x="170.3126" y="-78.94921" z="0.0"/>
+</node>
+
+<node id="7.0" label="Fonterra Multinational Dairy Company">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="35.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="200.513" y="-10.66956" z="0.0"/>
+</node>
+<node id="8.0" label="Advice">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="35.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="120.74683" y="-45.78035" z="0.0"/>
+</node>
+<node id="9.0" label="...">
+<attvalues>
+<attvalue for="authority" value="0.0034188034"/>
+<attvalue for="hub" value="0.0034188034"/>
+</attvalues>
+<viz:size value="35.0"/>
+<viz:color b="0" g="0" r="179"/>
+<viz:position x="100.6509" y="70.41602" z="0.0"/>
+</node>
+<node id="10.0" label="..">
+<attvalues>
+<attvalue for="authority" value="0.06324787"/>
+<attvalue for="hub" value="0.06324787"/>
+</attvalues>
+<viz:size value="25.0"/>
+<viz:color b="0" g="0" r="154"/>
+<viz:position x="-8.81755" y="-100.480377" z="0.0"/>
+</node>
+
+
+</nodes>
+<edges count="8">
+<edge id="0" source="0.0" target="1.0" label="testing"/>
+<edge id="1" source="0.0" target="2.0" weight="8.0"/>
+<edge id="2" source="2.0" target="3.0" weight="10.0"/>
+<edge id="3" source="3.0" target="4.0" weight="6.0"/>
+<edge id="4" source="4.0" target="5.0"/>
+<edge id="5" source="3.0" target="6.0"/>
+<edge id="6" source="3.0" target="7.0"/>
+<edge id="7" source="7.0" target="8.0"/>
+<edge id="8" source="5.0" target="9.0"/>
+<edge id="9" source="1.0" target="10.0"/>
+</edges>
+</graph>
+</gexf>

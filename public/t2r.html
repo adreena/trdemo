@@ -1,0 +1,361 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>T2R</title>
+  <meta name="description" content="">
+  <meta name="author" content="Kimia Hassanzadeh">
+  <meta name="robots" content="all" />
+
+  <meta name="viewport" content="width=device-width">
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  
+  
+  <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /><![endif]-->
+
+  <style type="text/css" media="all">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+  </style>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <script src="js/prettify.js"></script>
+  <script src="js/sigma.min.js"></script>
+
+</head>
+<body onload="prettyPrint();">
+ 
+  
+   <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li ><a href="/me">Home</a></li>
+		  <li class="active"><a href="/">Example</a></li>
+          
+          <li class="divider-vertical"></li>
+		  <li><a href="http://www.linkedin.com/pub/kimia-hassanzadeh/68/b04/770">Linkedin</a></li>
+          <li><a href="https://github.com/kimiaprojects">Github</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  <div class="container">
+    <div class="row">
+	
+ 
+
+  <div class="sigma-parent" id="sigma-example-parent">
+    <div class="sigma-expand" id="sigma-example"></div>
+  </div>
+</div>
+
+	<script src="js/sigma.parseGexf.js"></script><script type="text/javascript">function init() {
+		   (function(){
+		 
+				// First, let's write a FishEye class.
+				// There is no need to make this class global, since it is made to be used through
+				// the SigmaPublic object, that's why a local scope is used for the declaration.
+				// The parameter 'sig' represents a Sigma instance.
+				var FishEye = function(sig) {
+				sigma.classes.Cascade.call(this); // The Cascade class manages the chainable property
+				// edit/get function.
+				 
+				var self = this; // Used to avoid any scope confusion.
+				var isActivated = false; // Describes is the FishEye is activated.
+				 
+				this.p = { // The object containing the properties accessible with
+				radius: 200, // the Cascade.config() method.
+				power: 2
+				};
+		 
+			function applyFishEye(mouseX, mouseY) { // This method will apply a formula relatively to
+				// the mouse position.
+				var newDist, newSize, xDist, yDist, dist,
+				radius = self.p.radius,
+				power = self.p.power,
+				powerExp = Math.exp(power);
+				 
+				sig.graph.nodes.forEach(function(node) {
+				xDist = node.displayX - mouseX;
+				yDist = node.displayY - mouseY;
+				dist = Math.sqrt(xDist*xDist + yDist*yDist);
+				 
+				if(dist < radius){
+				newDist = powerExp/(powerExp-1)*radius*(1-Math.exp(-dist/radius*power));
+				newSize = powerExp/(powerExp-1)*radius*(1-Math.exp(-dist/radius*power));
+				 
+				if(!node.isFixed){
+				node.displayX = mouseX + xDist*(newDist/dist*3/4 + 1/4);
+				node.displayY = mouseY + yDist*(newDist/dist*3/4 + 1/4);
+				}
+				 
+				node.displaySize = Math.min(node.displaySize*newSize/dist,10*node.displaySize);
+				}
+				});
+				};
+		 
+		// The method that will be triggered when Sigma's 'graphscaled' is dispatched.
+			function handler() {
+				applyFishEye(
+				sig.mousecaptor.mouseX,
+				sig.mousecaptor.mouseY
+				);
+				}
+				 
+				this.handler = handler;
+				 
+				// A public method to set/get the isActivated parameter.
+				this.activated = function(v) {
+				if(v==undefined){
+				return isActivated;
+				}else{
+				isActivated = v;
+				return this;
+				}
+				};
+			 
+				// this.refresh() is just a helper to draw the graph.
+				this.refresh = function(){
+				sig.draw(2,2,2);
+				};
+				};
+		 
+		// Then, let's add some public method to sigma.js instances :
+		sigma.publicPrototype.activateFishEye = function() {
+			if(!this.fisheye) {
+			var sigmaInstance = this;
+			var fe = new FishEye(sigmaInstance._core);
+			sigmaInstance.fisheye = fe;
+			}
+			 
+			if(!this.fisheye.activated()){
+			this.fisheye.activated(true);
+			this._core.bind('graphscaled', this.fisheye.handler);
+			document.getElementById(
+			'sigma_mouse_'+this.getID()
+			).addEventListener('mousemove',this.fisheye.refresh,true);
+			}
+			 
+			return this;
+			};
+			 
+			sigma.publicPrototype.desactivateFishEye = function() {
+			if(this.fisheye && this.fisheye.activated()){
+			this.fisheye.activated(false);
+			this._core.unbind('graphscaled', this.fisheye.handler);
+			document.getElementById(
+			'sigma_mouse_'+this.getID()
+			).removeEventListener('mousemove',this.fisheye.refresh,true);
+			}
+			 
+			return this;
+		};
+		 
+		sigma.publicPrototype.fishEyeProperties = function(a1, a2) {
+			var res = this.fisheye.config(a1, a2);
+			return res == s ? this.fisheye : res;
+			};
+			})();
+ 
+/**
+* Now, let's use our plugin :
+*/
+  
+  
+  
+  
+  // Instanciate sigma.js and customize rendering :
+  
+  var sigInst = sigma.init(document.getElementById('sigma-example')).drawingProperties({
+    defaultLabelColor: '#fff',
+    defaultLabelSize: 14,
+    defaultLabelBGColor: '#fff',
+    defaultLabelHoverColor: '#000',
+    labelThreshold: 6,
+    defaultEdgeType: 'curve'
+  }).graphProperties({
+    minNodeSize: 0.5,
+    maxNodeSize: 5,
+    minEdgeSize: 1,
+    maxEdgeSize: 1
+  }).mouseProperties({
+    maxRatio: 1,
+	mouseEnabled: false
+  });
+ 
+  // Parse a GEXF encoded file to fill the graph
+  // (requires "sigma.parseGexf.js" to be included)
+  sigInst.parseGexf('/data/gtext.gexf');
+ 
+  // Bind events :
+  var greyColor = '#666';
+  sigInst.bind('overnodes',function(event){
+    var nodes = event.content;
+    var neighbors = {};
+    sigInst.iterEdges(function(e){
+      if(nodes.indexOf(e.source)<0 && nodes.indexOf(e.target)<0){
+        if(!e.attr['grey']){
+          e.attr['true_color'] = e.color;
+          e.color = greyColor;
+          e.attr['grey'] = 1;
+        }
+      }else{
+        e.color = e.attr['grey'] ? e.attr['true_color'] : e.color;
+        e.attr['grey'] = 0;
+ 
+        neighbors[e.source] = 1;
+        neighbors[e.target] = 1;
+      }
+    }).iterNodes(function(n){
+      if(!neighbors[n.id]){
+        if(!n.attr['grey']){
+          n.attr['true_color'] = n.color;
+          n.color = greyColor;
+          n.attr['grey'] = 1;
+        }
+      }else{
+        n.color = n.attr['grey'] ? n.attr['true_color'] : n.color;
+        n.attr['grey'] = 0;
+      }
+    }).draw(2,2,2);
+  }).bind('outnodes',function(){
+    sigInst.iterEdges(function(e){
+      e.color = e.attr['grey'] ? e.attr['true_color'] : e.color;
+      e.attr['grey'] = 0;
+    }).iterNodes(function(n){
+      n.color = n.attr['grey'] ? n.attr['true_color'] : n.color;
+      n.attr['grey'] = 0;
+    }).draw(2,2,2);
+  });
+ 
+  // Draw the graph :
+  sigInst.activateFishEye().draw();
+}
+ 
+if (document.addEventListener) {
+  document.addEventListener("DOMContentLoaded", init, false);
+} else {
+  window.onload = init;
+}
+ 
+	
+ 
+ 
+</script>
+
+<div class="container">
+
+<style type="text/css">
+  /* sigma.js context : */
+  .sigma-parent {
+    position: relative;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background: #222;
+    height: 500px;
+  }
+  .sigma-expand {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .buttons-container{
+    padding-bottom: 8px;
+    padding-top: 12px;
+  }
+</style>
+
+
+
+<br>
+<h3>Visualizing the structure of text</h3>
+<br>
+
+    <p>T2R is a tool for transforming texts into data graph</p>
+	<p>Graph consists of entities as vertices, and relations among entities as edges</p>
+	<p>Relations are either grammatical dependencies or semantic roles assigned to phrases of a sentence</p>
+	<p>Visualization tool in this demo is sigma.js, a lightweight JavaScript library to draw graphs, using the HTML canvas element. It has been especially designed to:</p>
+    <ul>
+      <li>Display interactively static graphs exported from a graph visualization software - <i>like <a href="http://gephi.org" target="_blank">Gephi</a></li></i>
+      <li>Display dynamically graphs that are generated on the fly</li>
+    </ul>
+	However sigma.js is no able to show labels for edges, I will provide more functionality to this page in near future.</p>
+
+	</br>
+	<div class="row">
+  <h4 class="span12">Description</h4></br>
+  <div class="span12">
+    <p>This example will load and display a GEXF encoded graph. Then, when the users rolls the mouse over a node, it will make each edge grey, except the ones that are linked to the node.</p>
+	<p>The paragraph used in this demo is from a medical report, please note that sentences are fully plain</p>
+	<ul><li>Hydric Botulism caused by the ingestion of toxins through contaminated water, led to the deaths of 163 buffaloes.  Buffaloes had breathing difficulties, normal alertness, and neurological signs of flaccid paralysis of musculature, which made locomotion difficult. Sporadic outbreaks of Hydric Botulism in cattle are reported in the states of Sao Paulo, Mato Grosso Sul, and Goias.
+</li></ul>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <h4 class="span12">Source of RDF</h4>
+  <div class="span12">
+    <pre id="sigma-example-code" class="prettyprint linenums">
+		Paralysis - of - Musculature
+		Paralysis - superClassof - Flaccid_Paralysis
+		Signs 	  - of - Paralysis
+		Signs 	  - superClassOf - Neurological_Signs
+		Signs 	  - of - Difficulties
+		Signs 	  - has_role - Creator (agent of action)
+		Buffaloes - has_role - Breather
+		Buffaloes - number - 163
+		Buffaloes - had - Difficulties
+		Buffaloes - had - Alertness
+		Alertness - superClassOf - Normal_Alertness
+		Death     - of  - Buffaloes
+		Water     - has_role - Thing_becoming_Contaminated
+		Water     - superClassOf - Toxin_water
+		Outbreak  - superClassOf - Sporadic_Outbreak
+		Outbreak  - of - HydrioBotulism
+		Outbreak  - has_role - Thing (thing that was reported)
+		Outbreak  - reported_in  - States
+		States    - of - Goias
+		States    - of - Sao_Paulo
+		States    - of - Mato_Grosso_Sul
+		Goias     - is - Location
+		Sao_Paulo - is - Location
+		Mato_Grosso_Sul - is - Location
+		HydrioBotulism  - in - Cattle
+		HydrioBotulism  - caused_by - Ingestion
+		HydrioBotulism  - has_role - leader (agent of cause)
+		Ingestion  - has_role - forcer (forced by cause)
+		
+	   </pre>
+  </div>
+</div>
+		
+<?php include("../php/statcounter.php"); ?>	
+
+
+<footer class="footer">
+  <p class="pull-right"><a href="#">&#8593; Back to top</a></p>
+  <p>© Kimia Hszd 2013</p>
+  <p>
+    You can also take a look at
+    my <span><a href="https://github.com/kimiaprojects">github repositories</a></span>
+  </p>
+</footer>
+	
+</body>
+</html>
